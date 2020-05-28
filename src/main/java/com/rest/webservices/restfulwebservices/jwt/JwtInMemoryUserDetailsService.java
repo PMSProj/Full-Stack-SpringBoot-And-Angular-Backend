@@ -16,8 +16,12 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
   static {
     inMemoryUserList.add(new JwtUserDetails(1L, "in28minutes",
         "$2a$10$3zHzb.Npv1hfZbLEU5qsdOju/tk2je6W6PnNnY.c1ujWPcZh4PL6e", "ROLE_USER_2"));
+    inMemoryUserList.add(new JwtUserDetails(2L, "Prity",
+            "$2a$10$J4D9MHKudsb93k/NTkTFeOrcZtOKfuX2ampkdwZ28e1.ewu8W0VQa", "ROLE_USER_2"));
   }
 
+  //$2a$10$J4D9MHKudsb93k/NTkTFeOrcZtOKfuX2ampkdwZ28e1.ewu8W0VQa
+  
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     Optional<JwtUserDetails> findFirst = inMemoryUserList.stream()
